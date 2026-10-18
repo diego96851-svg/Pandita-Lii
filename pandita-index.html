@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#ffd9e8">
+<title>Para ti, mi panda bonita 🐼💗</title>
+<style>
+:root{--pink:#ff76a8;--rose:#ff4f91;--cream:#fff8fb;--purple:#b99cff;--ink:#59384b}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;min-height:100vh;overflow-x:hidden;color:var(--ink);font-family:"Trebuchet MS",system-ui,sans-serif;background:linear-gradient(145deg,#ffe4ee 0%,#f7e8ff 48%,#e6f7ff 100%)}
+button{font:inherit;cursor:pointer;border:0}
+.bg-hearts,.sparkles{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:0}
+.float{position:absolute;bottom:-50px;animation:rise linear forwards;opacity:.8}
+@keyframes rise{to{transform:translateY(-115vh) rotate(360deg);opacity:0}}
+.wrap{position:relative;z-index:1;width:min(920px,92%);margin:auto;padding:22px 0 45px}
+.topline{text-align:center;font-size:.85rem;letter-spacing:.12em;text-transform:uppercase;color:#a75b83;font-weight:800}
+h1{font-size:clamp(2rem,7vw,4rem);line-height:1.05;text-align:center;margin:10px 0 8px;color:#e74787;text-shadow:0 4px 0 #fff}
+.subtitle{text-align:center;font-size:clamp(1rem,3vw,1.2rem);margin:0 auto 18px;max-width:600px}
+.scene{display:flex;justify-content:center;align-items:center;min-height:240px;position:relative}
+.moon{position:absolute;width:190px;height:190px;border-radius:50%;background:#fff5c8;box-shadow:0 0 0 14px #fff7d844,0 0 50px #ffe4a8;animation:glow 3s ease-in-out infinite}
+@keyframes glow{50%{transform:scale(1.05);box-shadow:0 0 0 22px #fff7d833,0 0 70px #ffe4a8}}
+.panda{position:relative;width:190px;height:200px;animation:bob 2.5s ease-in-out infinite;filter:drop-shadow(0 12px 8px #b47c9a30)}
+@keyframes bob{50%{transform:translateY(-10px) rotate(2deg)}}
+.ear{position:absolute;top:8px;width:61px;height:61px;border-radius:50%;background:#292333;border:5px solid #fff;z-index:1}
+.ear.left{left:18px}.ear.right{right:18px}
+.head{position:absolute;top:18px;left:19px;width:152px;height:140px;border-radius:48% 48% 45% 45%;background:#fff;border:5px solid #292333;z-index:2}
+.patch{position:absolute;top:43px;width:37px;height:48px;background:#292333;border-radius:50%;transform:rotate(20deg)}
+.patch.left{left:25px}.patch.right{right:25px;transform:rotate(-20deg)}
+.eye{position:absolute;top:57px;width:10px;height:13px;background:white;border-radius:50%;left:13px}
+.patch.right .eye{left:14px}
+.blush{position:absolute;top:83px;width:21px;height:11px;border-radius:50%;background:#ff9bbd;opacity:.9}
+.blush.left{left:10px}.blush.right{right:10px}
+.nose{position:absolute;top:76px;left:69px;width:13px;height:9px;border-radius:50%;background:#292333}
+.mouth{position:absolute;top:82px;left:68px;width:15px;height:9px;border-bottom:2px solid #292333;border-radius:50%}
+.bow{position:absolute;top:8px;right:20px;z-index:4;color:#ff4f91;font-size:45px;transform:rotate(15deg);text-shadow:0 2px white}
+.body{position:absolute;bottom:0;left:40px;width:110px;height:87px;border-radius:48% 48% 35% 35%;background:#292333;border:4px solid #fff}
+.belly{position:absolute;inset:13px 24px 4px;border-radius:50%;background:#fff}
+.arm{position:absolute;top:120px;width:39px;height:70px;background:#292333;border:4px solid #fff;border-radius:50%;z-index:3}
+.arm.left{left:24px;transform:rotate(24deg)}.arm.right{right:24px;transform:rotate(-24deg)}
+.heartheld{position:absolute;top:122px;left:77px;z-index:5;font-size:37px;animation:heartbeat 1s infinite}
+@keyframes heartbeat{0%,100%{transform:scale(1)}15%{transform:scale(1.2)}30%{transform:scale(1)}45%{transform:scale(1.12)}}
+.card{background:#ffffffd9;backdrop-filter:blur(8px);border:2px solid #fff;border-radius:26px;padding:clamp(20px,5vw,36px);box-shadow:0 18px 55px #c47ba52b;margin:18px auto;max-width:760px}
+.card h2{text-align:center;color:#e74787;margin:0 0 14px;font-size:1.55rem}
+.letter{font-size:1.08rem;line-height:1.85;white-space:pre-line}
+.signature{text-align:right;font-weight:800;color:#df4384;margin-top:15px}
+.buttons{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin:18px 0}
+.btn{padding:13px 18px;border-radius:999px;background:linear-gradient(135deg,#ff78a9,#ff4f91);color:white;font-weight:800;box-shadow:0 6px 0 #dc4d83;transition:transform .18s}
+.btn:hover{transform:translateY(-3px) scale(1.02)}.btn:active{transform:translateY(3px);box-shadow:0 2px 0 #dc4d83}
+.btn.alt{background:linear-gradient(135deg,#b69aff,#8f77e8);box-shadow:0 6px 0 #7964c8}
+.btn.blue{background:linear-gradient(135deg,#8ddcf4,#65bde8);box-shadow:0 6px 0 #519cc4}
+.surprise{display:none;text-align:center;padding:22px;border-radius:22px;background:#fff0f6;border:2px dashed #ff9dc2;animation:pop .45s ease}
+.surprise.show{display:block}
+@keyframes pop{from{opacity:0;transform:scale(.85)}to{opacity:1;transform:scale(1)}}
+.surprise .big{font-size:2.4rem}
+.counter{text-align:center;font-size:.95rem;color:#9a6681;margin-top:15px}
+footer{text-align:center;padding:18px 0;color:#a75b83;font-size:.9rem}
+#confetti{position:fixed;inset:0;pointer-events:none;z-index:9}
+@media(max-width:480px){.scene{min-height:220px}.moon{width:165px;height:165px}.panda{transform:scale(.9)}.panda{margin-top:5px}.letter{font-size:1rem}}
+</style>
+</head>
+<body>
+<div class="bg-hearts" id="bgHearts"></div><div class="sparkles" id="sparkles"></div><canvas id="confetti"></canvas>
+<main class="wrap">
+  <div class="topline">Una cartita hecha con mucho amor 💌</div>
+  <h1>Te extraño muchísimo</h1>
+  <p class="subtitle">Para mi panda bonita 🐼🎀, que está lejos de mis brazos, pero siempre cerquita de mi corazón.</p>
+  <div class="scene" aria-label="Panda animada con un corazón">
+    <div class="moon"></div>
+    <div class="panda">
+      <div class="ear left"></div><div class="ear right"></div>
+      <div class="head">
+        <div class="patch left"><div class="eye"></div></div><div class="patch right"><div class="eye"></div></div>
+        <div class="blush left"></div><div class="blush right"></div><div class="nose"></div><div class="mouth"></div>
+      </div>
+      <div class="bow">🎀</div><div class="body"><div class="belly"></div></div>
+      <div class="arm left"></div><div class="arm right"></div><div class="heartheld">💗</div>
+    </div>
+  </div>
+  <section class="card">
+    <h2>Mi niña bonita 💕</h2>
+    <div class="letter">No sé cómo explicarte todo lo que te extraño. Hay momentos en los que quisiera detener el tiempo, aparecer a tu lado y abrazarte tan fuerte que el mundo entero desapareciera por un ratito.
+
+Extraño tu presencia, tu forma de hacerme sonreír y esa sensación tan bonita que me da pensar en ti. A veces quisiera poder mandarte un abrazo dentro de un mensaje, darte un besito en la frente y recordarte, mirándote a los ojitos, lo muchísimo que significas para mí.
+
+Si esta panda pudiera caminar hasta donde estás, llevaría una bolsita llena de abrazos, un corazón enorme y una notita que dijera: «Ya llegué, mi amor. Ahora déjame abrazarte un buen rato». 🐼💗
+
+Aunque hoy nos falte ese abrazo, quiero que sientas todo el cariño que te mando desde aquí. Ojalá esta cartita te saque una sonrisa y te recuerde que hay alguien pensando en ti con muchísimo amor.
+
+<strong>Te extraño más de lo que caben estas palabras. Ojalá pronto pueda cambiar los mensajes por abrazos de verdad.</strong></div>
+    <div class="signature">Con todo mi cariño, para ti 💌</div>
+  </section>
+  <section class="card">
+    <h2>Abre tus sorpresitas 🎁</h2>
+    <p style="text-align:center;margin-top:-4px">Toca cada botón, mi panda preciosa. ¡Hay mimos escondidos para ti!</p>
+    <div class="buttons">
+      <button class="btn" onclick="surprise('hug')">🤗 Abrazo a distancia</button>
+      <button class="btn alt" onclick="surprise('secret')">💌 Mensajito secreto</button>
+      <button class="btn blue" onclick="surprise('promise')">🌙 Una promesa</button>
+      <button class="btn" onclick="shower()">💖 Lluvia de corazones</button>
+    </div>
+    <div class="surprise" id="surprise" role="status" aria-live="polite">
+      <div class="big" id="sEmoji">💗</div><h3 id="sTitle">Una sorpresa para ti</h3><p id="sText"></p>
+    </div>
+    <div class="counter" id="counter">💞 Sorpresas abiertas: 0</div>
+  </section>
+  <section class="card" style="text-align:center">
+    <h2>Un último besito… 😚</h2>
+    <p>Si estuviera contigo ahora mismo, no te soltaría tan rápido.</p>
+    <button class="btn" onclick="kiss()">Pulsa para recibir un besito 💋</button>
+    <p id="kissText" style="font-weight:800;color:#e74787;min-height:1.5em"></p>
+  </section>
+  <footer>Hecho pensando en ti, mi panda bonita 🐼💗 · Siempre hay un abrazo esperándote aquí.</footer>
+</main>
+<script>
+let opened=0;
+const surprises={
+ hug:{emoji:"🐼🤗💗",title:"Tu abrazo llegó",text:"Cierra los ojitos un segundo e imagina que esta panda te abraza fuerte, te acomoda el cabello y te dice bajito: «Te extraño mucho, mi niña. Aquí tienes un abrazo que no se acaba»."},
+ secret:{emoji:"💌✨",title:"Un secreto de mi corazón",text:"Pssst… ¿sabes qué? Aunque no estés aquí a mi lado, apareces en mis pensamientos más veces de las que imaginas. Si pudiera pedir un deseo ahora mismo, sería tenerte cerquita y verte sonreír."},
+ promise:{emoji:"🌙🫶🏻",title:"Mi pequeña promesa",text:"Prometo seguir cuidando este cariño con detalles, paciencia y sinceridad. No puedo acortar la distancia con magia, pero sí puedo recordarte cuánto me importas, incluso en los días en que te extraño más."}
+};
+function surprise(type){const s=surprises[type];document.getElementById('sEmoji').textContent=s.emoji;document.getElementById('sTitle').textContent=s.title;document.getElementById('sText').textContent=s.text;document.getElementById('surprise').classList.add('show');opened++;document.getElementById('counter').textContent='💞 Sorpresas abiertas: '+opened;burst(30);}
+function heart(){const e=document.createElement('div');e.className='float';e.textContent=['💗','💕','💖','💞','🌸','✨'][Math.floor(Math.random()*6)];e.style.left=Math.random()*100+'%';e.style.fontSize=(18+Math.random()*25)+'px';e.style.animationDuration=(5+Math.random()*5)+'s';document.getElementById('bgHearts').appendChild(e);setTimeout(()=>e.remove(),10500)}
+setInterval(heart,550);
+function shower(){for(let i=0;i<45;i++)setTimeout(heart,i*35);burst(100);document.getElementById('counter').textContent='💞 Sorpresas abiertas: '+(++opened);document.getElementById('surprise').classList.add('show');document.getElementById('sEmoji').textContent='💗💖💕💘';document.getElementById('sTitle').textContent='¡Una lluvia de cariño!';document.getElementById('sText').textContent='Cada corazoncito es un abrazo, un besito y un «te extraño mucho» que viaja hasta ti.'}
+function kiss(){document.getElementById('kissText').textContent='¡Muaaa! 😚💋🐼 Otro más porque te extraño muchísimo. 💗';shower()}
+function burst(n){const c=document.getElementById('confetti'),ctx=c.getContext('2d');c.width=innerWidth*devicePixelRatio;c.height=innerHeight*devicePixelRatio;c.style.width=innerWidth+'px';c.style.height=innerHeight+'px';ctx.scale(devicePixelRatio,devicePixelRatio);const bits=Array.from({length:n},()=>({x:innerWidth/2,y:innerHeight*.45,vx:(Math.random()-.5)*10,vy:-Math.random()*9-2,size:4+Math.random()*8,life:55+Math.random()*40,char:['♥','✦','❤','✿'][Math.floor(Math.random()*4)]}));let frame=0;function draw(){ctx.clearRect(0,0,innerWidth,innerHeight);bits.forEach(b=>{b.x+=b.vx;b.y+=b.vy;b.vy+=.16;b.life--;ctx.globalAlpha=Math.max(0,b.life/70);ctx.fillStyle=['#ff4f91','#bd9cff','#ffb3cf','#75cbe8'][Math.floor(Math.random()*4)];ctx.font=b.size*2+'px sans-serif';ctx.fillText(b.char,b.x,b.y)});ctx.globalAlpha=1;if(frame++<100)requestAnimationFrame(draw);else ctx.clearRect(0,0,innerWidth,innerHeight)}draw()}
+window.addEventListener('resize',()=>{const c=document.getElementById('confetti');c.width=innerWidth*devicePixelRatio;c.height=innerHeight*devicePixelRatio});
+</script>
+</body>
+</html>
